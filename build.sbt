@@ -1,6 +1,5 @@
-organization := "com.michaelpollmeier"
 name := "ci-plugin-usage"
-// version := "0.1.0-SNAPSHOT"
+organization := "com.michaelpollmeier"
 
 scalaVersion := "2.12.6"
 libraryDependencies ++= Seq(
@@ -8,9 +7,17 @@ libraryDependencies ++= Seq(
 )
 scalacOptions ++= Seq("-deprecation", "-feature")
 
-ThisBuild/resolvers ++= Seq(
-  Resolver.mavenLocal,
-  "Apache public" at "https://repository.apache.org/content/groups/public/",
-  "Sonatype OSS" at "https://oss.sonatype.org/content/repositories/public",
-  "Bedatadriven for SOOT dependencies" at "https://nexus.bedatadriven.com/content/groups/public"
+homepage := Some(url("https://github.com/mpollmeier/sbt-ci-release-usage"))
+scmInfo := Some(ScmInfo(
+    url("https://github.com/mpollmeier/sbt-ci-release-usage"),
+    "scm:git@github.com:mpollmeier/sbt-ci-release-usage.git"))
+
+licenses := List("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0"))
+developers := List(
+  Developer(
+    "mpollmeier",
+    "Michael Pollmeier",
+    "michael@michaelpollmeier.com",
+    url("https://michaelpollmeier.com")
+  )
 )
