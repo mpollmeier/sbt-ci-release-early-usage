@@ -1,5 +1,6 @@
 // addSbtPlugin("com.michaelpollmeier" % "sbt-ci-release" % "999.0.0-SNAPSHOT")
-addSbtPlugin("com.michaelpollmeier" % "sbt-ci-release" % "0.1.0-SNAPSHOT")
+// addSbtPlugin("com.michaelpollmeier" % "sbt-ci-release" % "0.1.0-SNAPSHOT")
+addSbtPlugin("com.michaelpollmeier" % "sbt-ci-release" % "0.0.2")
 
 
 // addSbtPlugin("com.github.gseitz" % "sbt-release" % "1.0.7")
@@ -7,7 +8,7 @@ addSbtPlugin("com.michaelpollmeier" % "sbt-ci-release" % "0.1.0-SNAPSHOT")
 // addSbtPlugin("com.lucidchart" % "sbt-scalafmt" % "1.15")
 // addSbtPlugin("io.shiftleft" %% "sbt-jardigests" % "0.1-SNAPSHOT")
 
-// resolvers ++= Seq(
-//   "Artifactory snapshot local" at "https://shiftleft.jfrog.io/shiftleft/libs-snapshot-local",
-//   "Artifactory release local" at "https://shiftleft.jfrog.io/shiftleft/libs-release-local"
-// )
+resolvers ++= Seq(
+  "Artifactory snapshot local" at "https://shiftleft.jfrog.io/shiftleft/libs-snapshot-local",
+  "Artifactory release local" at "https://shiftleft.jfrog.io/shiftleft/libs-release-local"
+)

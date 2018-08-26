@@ -23,13 +23,13 @@ developers := List(
   )
 )
 
-publishTo := sonatypePublishTo.value
-// publishTo := {
-//   val jfrog = "https://shiftleft.jfrog.io/shiftleft/"
-//   val buildTimestampSuffix = ";build.timestamp=" + new java.util.Date().getTime
-//   if (version.value.endsWith("-SNAPSHOT")) {
-//     Some("snapshots" at jfrog + "libs-snapshot-local" + buildTimestampSuffix)
-//   } else {
-//     Some("releases"  at jfrog + "libs-release-local")
-//   }
-// }
+// publishTo := sonatypePublishTo.value
+publishTo := {
+  val jfrog = "https://shiftleft.jfrog.io/shiftleft/"
+  val buildTimestampSuffix = ";build.timestamp=" + new java.util.Date().getTime
+  if (version.value.endsWith("-SNAPSHOT")) {
+    Some("snapshots" at jfrog + "libs-snapshot-local" + buildTimestampSuffix)
+  } else {
+    Some("releases"  at jfrog + "libs-release-local")
+  }
+}
