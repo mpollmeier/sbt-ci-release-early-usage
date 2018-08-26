@@ -33,3 +33,12 @@ publishTo := sonatypePublishTo.value
 //     Some("releases"  at jfrog + "libs-release-local")
 //   }
 // }
+
+resolvers ++= Seq(
+  Resolver.mavenLocal,
+  "Artifactory snapshot local" at "https://shiftleft.jfrog.io/shiftleft/libs-snapshot-local",
+  "Artifactory release local" at "https://shiftleft.jfrog.io/shiftleft/libs-release-local",
+  "Apache public" at "https://repository.apache.org/content/groups/public/",
+  "Sonatype OSS" at "https://oss.sonatype.org/content/repositories/public",
+  "Bedatadriven for SOOT dependencies" at "https://nexus.bedatadriven.com/content/groups/public"
+)
