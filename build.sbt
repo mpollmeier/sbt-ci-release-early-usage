@@ -1,3 +1,4 @@
+organization := "com.michaelpollmeier"
 name := "ci-plugin-usage"
 // version := "0.1.0-SNAPSHOT"
 
