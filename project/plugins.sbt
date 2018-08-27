@@ -1,6 +1,5 @@
-// addSbtPlugin("com.michaelpollmeier" % "sbt-ci-release" % "999.0.0-SNAPSHOT")
-// addSbtPlugin("com.michaelpollmeier" % "sbt-ci-release" % "0.1.0-SNAPSHOT")
-addSbtPlugin("com.michaelpollmeier" % "sbt-ci-release" % "0.0.2")
+// addSbtPlugin("com.michaelpollmeier" % "sbt-ci-release" % "0.0.2")
+addSbtPlugin("com.michaelpollmeier" % "sbt-ci-release" % "0.0.3-SNAPSHOT")
 
 
 // addSbtPlugin("com.github.gseitz" % "sbt-release" % "1.0.7")
