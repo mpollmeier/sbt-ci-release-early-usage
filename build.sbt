@@ -4,7 +4,7 @@ organization := "com.michaelpollmeier"
 scalaVersion := "2.12.6"
 crossScalaVersions := Seq(scalaVersion.value, "2.11.12" /*, "2.13.0-M4"*/ )
 libraryDependencies ++= Seq(
-  "io.shiftleft" % "common" % "0.0.0-SNAPSHOT",
+  // "io.shiftleft" % "common" % "0.0.0-SNAPSHOT",
   "org.scalatest" %% "scalatest" % "3.0.3"
 )
 scalacOptions ++= Seq("-deprecation", "-feature")
