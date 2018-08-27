@@ -2,7 +2,7 @@ name := "ci-plugin-usage"
 organization := "com.michaelpollmeier"
 
 scalaVersion := "2.12.6"
-crossScalaVersions := Seq(scalaVersion.value, "2.11.12" /*, "2.13.0-M4"*/ )
+crossScalaVersions := Seq(scalaVersion.value, "2.11.12")
 libraryDependencies ++= Seq(
   // "io.shiftleft" % "common" % "0.0.0-SNAPSHOT",
   "org.scalatest" %% "scalatest" % "3.0.3"
@@ -33,13 +33,13 @@ resolvers ++= Seq(
   "Bedatadriven for SOOT dependencies" at "https://nexus.bedatadriven.com/content/groups/public"
 )
 
-// publishTo := sonatypePublishTo.value
-publishTo := {
-  val jfrog = "https://shiftleft.jfrog.io/shiftleft/"
-  val buildTimestampSuffix = ";build.timestamp=" + new java.util.Date().getTime
-  if (version.value.endsWith("-SNAPSHOT")) {
-    Some("snapshots" at jfrog + "libs-snapshot-local" + buildTimestampSuffix)
-  } else {
-    Some("releases"  at jfrog + "libs-release-local")
-  }
-}
+publishTo := sonatypePublishTo.value
+// publishTo := {
+//   val jfrog = "https://shiftleft.jfrog.io/shiftleft/"
+//   val buildTimestampSuffix = ";build.timestamp=" + new java.util.Date().getTime
+//   if (version.value.endsWith("-SNAPSHOT")) {
+//     Some("snapshots" at jfrog + "libs-snapshot-local" + buildTimestampSuffix)
+//   } else {
+//     Some("releases"  at jfrog + "libs-release-local")
+//   }
+// }
