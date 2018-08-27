@@ -1,5 +1,5 @@
 // addSbtPlugin("com.michaelpollmeier" % "sbt-ci-release" % "0.0.2")
-addSbtPlugin("com.michaelpollmeier" % "sbt-ci-release" % "0.0.3-SNAPSHOT")
+addSbtPlugin("io.shiftleft" % "sbt-ci-release-early" % "0.0.3-SNAPSHOT")
 
 
 // addSbtPlugin("com.github.gseitz" % "sbt-release" % "1.0.7")
