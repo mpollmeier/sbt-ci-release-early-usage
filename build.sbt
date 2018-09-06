@@ -3,6 +3,7 @@ organization := "com.michaelpollmeier"
 
 scalaVersion := "2.12.6"
 crossScalaVersions := Seq(scalaVersion.value, "2.11.12")
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.3"
 
 homepage := Some(url("https://github.com/mpollmeier/sbt-ci-release-early-usage"))
 scmInfo := Some(ScmInfo(
