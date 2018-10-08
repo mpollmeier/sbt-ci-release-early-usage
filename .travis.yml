@@ -3,9 +3,10 @@ jdk: oraclejdk8
 
 before_install:
 - git fetch --tags
-- if [[ "$TRAVIS_BRANCH" == "master" ]]; then openssl aes-256-cbc -K $encrypted_d8ab755c5150_key -iv $encrypted_d8ab755c5150_iv -in private-key.pem.enc -out private-key.pem -d; fi
-- if [[ "$TRAVIS_BRANCH" == "master" ]]; then gpg --import private-key.pem; fi
-- if [[ "$TRAVIS_BRANCH" == "master" ]]; then gpg --list-keys; fi
+- echo $TRAVIS_PULL_REQUEST
+- if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" != "false" ]]; then echo a; fi
+- if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then echo b; fi
+- if [[ "$TRAVIS_BRANCH" == "master" ]]; then echo c; echo d; fi
 
 stages:
 - name: test
