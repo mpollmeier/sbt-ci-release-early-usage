@@ -3,16 +3,14 @@ jdk: oraclejdk8
 
 before_install:
 - git fetch --tags
-- if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then echo b; fi
-- if [[ "$TRAVIS_BRANCH" == "master" ]]; then \
-    echo c; \
-    echo d; \
-  fi
+- echo foo
+  if branch = master
+- if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_EVENT_TYPE" == "push" ]]; then openssl aes-256-cbc -K $encrypted_d8ab755c5150_key -iv $encrypted_d8ab755c5150_iv -in private-key.pem.enc -out private-key.pem -d; gpg --import private-key.pem; gpg --list-keys; fi
 
 stages:
 - name: test
 - name: release
-  if: branch = master
+  if: branch = master AND type = push
 
 jobs:
   include:
