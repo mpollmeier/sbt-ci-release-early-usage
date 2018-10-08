@@ -4,6 +4,7 @@ jdk: oraclejdk8
 before_install:
 - openssl aes-256-cbc -K $encrypted_d8ab755c5150_key -iv $encrypted_d8ab755c5150_iv
   -in private-key.pem.enc -out private-key.pem -d
+  if: branch = master
 - git fetch --tags
 
 install:
