@@ -6,7 +6,7 @@ before_install:
 - if [[ "$TRAVIS_BRANCH" == "master" ]]; then openssl aes-256-cbc -K $encrypted_d8ab755c5150_key -iv $encrypted_d8ab755c5150_iv -in private-key.pem.enc -out private-key.pem -d ; fi
 
 install:
-- gpg --import private-key.pem
+- if [[ "$TRAVIS_BRANCH" == "master" ]]; then gpg --import private-key.pem; fi
 - gpg --list-keys
 
 stages:
