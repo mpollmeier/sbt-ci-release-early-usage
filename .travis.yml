@@ -2,13 +2,11 @@ language: scala
 jdk: oraclejdk8
 
 before_install:
-- openssl aes-256-cbc -K $encrypted_d8ab755c5150_key -iv $encrypted_d8ab755c5150_iv
-  -in private-key.pem.enc -out private-key.pem -d
 - git fetch --tags
-
-install:
-- gpg --import private-key.pem
-- gpg --list-keys
+- echo $TRAVIS_PULL_REQUEST
+- if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" != "false" ]]; then echo a; fi
+- if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then echo b; fi
+- if [[ "$TRAVIS_BRANCH" == "master" ]]; then echo c; echo d; fi
 
 stages:
 - name: test
