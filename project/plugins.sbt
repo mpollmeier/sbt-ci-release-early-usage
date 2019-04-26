@@ -1,5 +1,3 @@
-addSbtPlugin("io.shiftleft" % "sbt-ci-release-early" % "0.0.6")
+addSbtPlugin("io.shiftleft" % "sbt-ci-release-early" % "1.0.15")
 
-resolvers ++= Seq(
-  "Sonatype OSS" at "https://oss.sonatype.org/content/repositories/public",
-)
+resolvers += "Sonatype OSS" at "https://oss.sonatype.org/content/repositories/public"

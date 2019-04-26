@@ -1,7 +1,7 @@
 name := "sbt-ci-release-early-usage"
 organization := "com.michaelpollmeier"
 
-scalaVersion := "2.12.6"
+scalaVersion := "2.12.8"
 crossScalaVersions := Seq(scalaVersion.value, "2.11.12")
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.3"
 
