@@ -1,3 +1,3 @@
-addSbtPlugin("io.shiftleft" % "sbt-ci-release-early" % "999.0.0-SNAPSHOT")
+addSbtPlugin("io.shiftleft" % "sbt-ci-release-early" % "1.0.22")
 
-resolvers += "Sonatype OSS" at "https://oss.sonatype.org/content/repositories/public"
+//resolvers += "Sonatype OSS" at "https://oss.sonatype.org/content/repositories/public"
