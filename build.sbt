@@ -15,3 +15,4 @@ developers := List(Developer("mpollmeier", "Michael Pollmeier", "michael@michael
 publishTo := sonatypePublishToBundle.value
 
 
+
