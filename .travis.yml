@@ -1,5 +1,7 @@
 language: scala
 jdk: openjdk8
+dist: bionic
+
 before_install:
 - openssl aes-256-cbc -K $encrypted_fa993ea8dd40_key -iv $encrypted_fa993ea8dd40_iv
   -in private-key.pem.enc -out private-key.pem -d
