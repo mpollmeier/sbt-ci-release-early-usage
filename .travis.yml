@@ -1,6 +1,6 @@
 language: scala
-dist: bionic
-jdk: openjdk10
+dist: xenial
+jdk: openjdk8
 
 before_install:
 - openssl aes-256-cbc -K $encrypted_fa993ea8dd40_key -iv $encrypted_fa993ea8dd40_iv
