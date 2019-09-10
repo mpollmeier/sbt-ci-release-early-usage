@@ -2,4 +2,6 @@
 addSbtPlugin("org.xerial.sbt" % "sbt-sonatype" % "3.6")
 addSbtPlugin("com.jsuereth" % "sbt-pgp" % "2.0.0-M2")
 
+libraryDependencies += "org.apache.httpcomponents" % "httpclient" % "4.5.10"
+
 //resolvers += "Sonatype OSS" at "https://oss.sonatype.org/content/repositories/public"
