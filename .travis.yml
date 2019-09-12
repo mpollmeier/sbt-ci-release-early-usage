@@ -4,7 +4,7 @@ jdk: openjdk10
 if: tag IS blank
 
 env:
-- GPG_TTY=loopback
+- GPG_TTY=$(tty)
 
 before_install:
 - openssl aes-256-cbc -K $encrypted_fa993ea8dd40_key -iv $encrypted_fa993ea8dd40_iv
@@ -12,7 +12,9 @@ before_install:
 - git fetch --tags
 install:
 - gpg --batch --import private-key.pem
-- gpg --list-keys
+- tty
+- echo $TTY
+- echo $GPG_TTY
 stages:
 - name: test
 - name: release
