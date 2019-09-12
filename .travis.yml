@@ -8,7 +8,6 @@ before_install:
   -in private-key.pem.enc -out private-key.pem -d
 - git fetch --tags
 install:
-- gpg --import public-key.pem
 - gpg --import private-key.pem
 - gpg --list-keys
 stages:
