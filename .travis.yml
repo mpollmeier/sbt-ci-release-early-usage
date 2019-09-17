@@ -13,8 +13,6 @@ before_install:
 install:
 - gpg --batch --import private-key.pem
 - tty
-- echo $TTY
-- echo $GPG_TTY
 stages:
 - name: test
 - name: release
