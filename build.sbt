@@ -2,7 +2,7 @@ name := "sbt-ci-release-early-usage"
 organization := "com.michaelpollmeier"
 
 scalaVersion := "2.13.0"
-crossScalaVersions := Seq(scalaVersion.value, "2.12.9", "2.11.12")
+crossScalaVersions := Seq(scalaVersion.value, "2.12.10", "2.11.12")
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8"
 
 homepage := Some(url("https://github.com/mpollmeier/sbt-ci-release-early-usage"))
