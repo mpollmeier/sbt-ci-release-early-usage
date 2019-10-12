@@ -10,14 +10,20 @@ before_install:
 
 stages:
 - name: test
-- name: release
+- name: release-jfrog
+  if: branch = master AND type = push
+- name: release-sonatype
   if: branch = master AND type = push
 jobs:
   include:
   - stage: test
     script: sbt +test
-  - stage: release
-    script: sbt ci-release-sonatype
+  - stage: release-jfrog
+    script:
+      - sbt ciReleaseTagNextVersion 
+      - sbt 'set publishTo := Some("releases" at "https://shiftleft.jfrog.io/shiftleft/libs-release-local")' ciRelease
+  - stage: release-sonatype
+    script: sbt ciReleaseSonatype
 before_cache:
 - find $HOME/.sbt -name "*.lock" -type f -delete
 - find $HOME/.ivy2/cache -name "ivydata-*.properties" -type f -delete
