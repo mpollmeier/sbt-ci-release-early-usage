@@ -19,9 +19,7 @@ jobs:
   - stage: test
     script: sbt +test
   - stage: release-jfrog
-    script:
-      - sbt ciReleaseTagNextVersion 
-      - sbt 'set publishTo := Some("releases" at "https://shiftleft.jfrog.io/shiftleft/libs-release-local")' ciRelease
+    script: sbt ciReleaseTagNextVersion 'set publishTo := Some("releases" at "https://shiftleft.jfrog.io/shiftleft/libs-release-local")' 'set credentials += Credentials("Artifactory Realm", "shiftleft.jfrog.io", "jenkins-ci", "fffffffff")' ciRelease
   - stage: release-sonatype
     script: sbt ciReleaseSonatype
 before_cache:
