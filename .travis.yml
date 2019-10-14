@@ -2,12 +2,11 @@ language: scala
 dist: bionic
 jdk: openjdk10
 if: tag IS blank
-
 before_install:
 - git fetch --tags
-- openssl aes-256-cbc -K $encrypted_fa993ea8dd40_key -iv $encrypted_fa993ea8dd40_iv -in private-key.pem.enc -out private-key.pem -d
+- openssl aes-256-cbc -K $encrypted_fa993ea8dd40_key -iv $encrypted_fa993ea8dd40_iv
+  -in private-key.pem.enc -out private-key.pem -d
 - gpg --batch --import private-key.pem
-
 stages:
 - name: test
 - name: release-jfrog
@@ -19,7 +18,9 @@ jobs:
   - stage: test
     script: sbt +test
   - stage: release-jfrog
-    script: sbt ciReleaseTagNextVersion 'set publishTo := Some("releases" at "https://shiftleft.jfrog.io/shiftleft/libs-release-local")' 'set credentials += Credentials("Artifactory Realm", "shiftleft.jfrog.io", "jenkins-ci", "fffffffff")' ciRelease
+    script: sbt ciReleaseTagNextVersion 'set publishTo := Some("releases" at "https://shiftleft.jfrog.io/shiftleft/libs-release-local")'
+      "set credentials += Credentials(\"Artifactory Realm\", \"shiftleft.jfrog.io\",
+      \"$JFROG_USER\", \"fffffffff\")" ciRelease
   - stage: release-sonatype
     script: sbt ciReleaseSonatype
 before_cache:
@@ -33,3 +34,7 @@ cache:
   - "$HOME/.sbt/launchers"
   - "$HOME/.ivy2/cache"
   - "$HOME/.coursier"
+env:
+  global:
+  - secure: SymXrYuDblFRObtGbODjadPQqc8BzoQnuUq3kmvXPeia66I/0ZiRsopgSTQ0drANhOwOFswOkYOpBOW4MMt5AA3U1mPlPzmCA3kVKqG/jG6PAy/20oKLHQ20vZRRKoDTbs4w3e0tqhTTlZQAfdNmgDkkpI1YH93CmfCea3rPm6qrhSN9j0CeiGr1OLgZABb6yOrMK1y9ZTaZ6lVH7ntcIqCELHn1WQzdWHHW/xBMRYmiNvo/fEfNq4urYhaINsys2E3OIe1g2tysvc7DJmUaOFgZEdZPmV5l/NbbVflmVM7M3SXz26lpQg9RID0kycmwX3sXIv/+mGCLhYnq0gW9fFJBuX+6xQ6Dz2mwVv9H0oRVBPx223a3GXA+tYIRdlHv4OvHG4Q6q0NRamWUjcbTk7cRy53qqZvCb0Oy1biItWL2hLoblE/xNrQCMQZZ2ydm+zix6XKH3Ij5LDLmFsZpoip+ZJhVQVY8qzB3k73eynmV/CmbGlxQuY0ypLrx2QilWuCnqf/Z5wIOQ5M56KvU2HU3OhuNex6FXNjOgMrDRJLhmWlIRjYLRN1eOwlLPO1jfOnDxGlM+7hYnyZuUe+j0rWkEhNg2lpAMN3g9UnASNt5lJtLdTrntf1zuSiyPc653B6M9fVnSLWZtqFfX2l9Su0bvlSNqNNnMcaqKChAhQQ=
+  - secure: YtEX30pmI/spRBp8zNGOwpLRoHDsCjAMLh04GwvWVB2P7VM4FzTvxT1UlA209ffVx4dOlqHYsvy/ERCmPG/5WxErE/eTSrQI5ALzlvHoSVaOVeEhatXvyyymHfXRk3MJcjMyFk+8D0s9trNeQcYQslSC8yznp58TeB0VfpdaDMt+Pv2wJ47+BnOvMxYFIpNyiI3t/lqEuml9wVnWVw3B5VWgDVcqZ2E+lm5wRv9sP+PdTy4K1BVfxFA0lnLLOOQxNH7h2w5bWAGeYd61RNbC07peAvVZlISjF/7ATB71a5/K72cukqAdUOU4CxZ0ZLeq93DWpFi8+4klTIzdiOMR3zAwg26v8TcN9muEiPgROT2053HbdRNM3ILOehoTtLx2KaobGAfTmQIcMsE8co18f1wPtBGSygKT8DgiTAj6s8pHo2SUkUd7Ik6KeIFFowYsV5sUw/vTaDYuS0RtDygATqf80ybz+TlVkGRcaeN2YgV0AC3rsH2cuk4umrnVCSTyEsitfEc3XyyX1K6WsRv5AuiRQ5It8R0CtdwhY7zvY349DHodI9k1XH68/iS4QcoA3+kZXdkxO1k3ityyu8R2LIjBbTjBRLv8D0VOLMXmO4XGF9lj3/kbuWTyjgJquD0lcXKkZdJW3C10dNfmeRPUMQ2DKLJwGiyei7SauKP6UiE=
