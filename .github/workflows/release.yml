@@ -4,7 +4,7 @@ on:
     branches: [master, main]
     tags: ["*"]
 jobs:
-  publish:
+  release:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -12,7 +12,8 @@ jobs:
           fetch-depth: 0
       - uses: olafurpg/setup-scala@v10
       - uses: olafurpg/setup-gpg@v3
-      - run: sbt test ciReleaseTagNextVersion ci-release
+      - run: sbt test ciReleaseTagNextVersion
+      - run: sbt ci-release
         env:
           PGP_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
           PGP_SECRET: ${{ secrets.PGP_SECRET }}
