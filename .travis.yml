@@ -17,12 +17,12 @@ jobs:
   include:
   - stage: test
     script: sbt +test
-  - stage: release-jfrog
-    script: sbt ciReleaseTagNextVersion 'set publishTo := Some("releases" at "https://shiftleft.jfrog.io/shiftleft/libs-release-local")'
-      "set credentials += Credentials(\"Artifactory Realm\", \"shiftleft.jfrog.io\",
-      \"$JFROG_USER\", \"$JFROG_PASS\")" ciRelease
-  - stage: release-sonatype
-    script: sbt ciReleaseSonatype
+  # - stage: release-jfrog
+  #   script: sbt ciReleaseTagNextVersion 'set publishTo := Some("releases" at "https://shiftleft.jfrog.io/shiftleft/libs-release-local")'
+  #     "set credentials += Credentials(\"Artifactory Realm\", \"shiftleft.jfrog.io\",
+  #     \"$JFROG_USER\", \"$JFROG_PASS\")" ciRelease
+  # - stage: release-sonatype
+    # script: sbt ciReleaseSonatype
 before_cache:
 - find $HOME/.sbt -name "*.lock" -type f -delete
 - find $HOME/.ivy2/cache -name "ivydata-*.properties" -type f -delete
