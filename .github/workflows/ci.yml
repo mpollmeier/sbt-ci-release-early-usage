@@ -1,15 +1,11 @@
-name: CI
-on:
-  push:
-    branches: ![master, main]
-    tags: ["*"]
+name: PR
+on: pull_request
 jobs:
-  ci:
+  pr:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - uses: olafurpg/setup-scala@v10
-      - uses: olafurpg/setup-gpg@v3
       - run: sbt test
