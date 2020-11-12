@@ -1,0 +1,15 @@
+name: CI
+on:
+  push:
+    branches: ![master, main]
+    tags: ["*"]
+jobs:
+  ci:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: olafurpg/setup-scala@v10
+      - uses: olafurpg/setup-gpg@v3
+      - run: sbt test
