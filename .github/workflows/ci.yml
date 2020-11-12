@@ -1,10 +1,7 @@
-name: CI
-on:
-  push:
-    branches: ![master, main]
-    tags: ["*"]
+name: PR
+on: pull_request
 jobs:
-  ci:
+  pr:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
