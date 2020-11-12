@@ -6,7 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - uses: olafurpg/setup-scala@v10
-      - uses: olafurpg/setup-gpg@v3
       - run: sbt test
