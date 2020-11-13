@@ -6,7 +6,6 @@ scalaVersion := "2.13.3"
 crossScalaVersions := Seq(scalaVersion.value, "2.12.12")
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8"
 
-homepage := Some(url("https://github.com/mpollmeier/sbt-ci-release-early-usage"))
 scmInfo := Some(ScmInfo(
     url("https://github.com/mpollmeier/sbt-ci-release-early-usage"),
     "scm:git@github.com:mpollmeier/sbt-ci-release-early-usage.git"))
