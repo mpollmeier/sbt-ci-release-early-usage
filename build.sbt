@@ -12,3 +12,6 @@ scmInfo := Some(ScmInfo(
     "scm:git@github.com:mpollmeier/sbt-ci-release-early-usage.git"))
 licenses := List("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0"))
 developers := List(Developer("mpollmeier", "Michael Pollmeier", "michael@michaelpollmeier.com", url("https://michaelpollmeier.com")))
+
+ThisBuild / publishTo := Some("releases" at "https://shiftleft.jfrog.io/shiftleft/libs-release-local")
+
