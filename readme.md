@@ -1,1 +1,1 @@
-https://travis-ci.org/mpollmeier/sbt-ci-release-early-usage
+https://github.com/mpollmeier/sbt-ci-release-early-usage/workflows/release/badge.svg
