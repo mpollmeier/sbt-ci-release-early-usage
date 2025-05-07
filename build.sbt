@@ -1,9 +1,9 @@
 name := "sbt-ci-release-early-usage"
 organization := "com.michaelpollmeier"
 
-scalaVersion := "2.13.8"
-crossScalaVersions := Seq(scalaVersion.value, "2.12.15")
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8"
+scalaVersion := "3.6.4"
+crossScalaVersions := Seq(scalaVersion.value, "2.13.16")
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.18"
 
 scmInfo := Some(ScmInfo(
     url("https://github.com/mpollmeier/sbt-ci-release-early-usage"),
