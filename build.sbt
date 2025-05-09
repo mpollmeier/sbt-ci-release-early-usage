@@ -5,6 +5,12 @@ scalaVersion := "3.6.4"
 crossScalaVersions := Seq(scalaVersion.value, "2.13.16")
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.18"
 
+ThisBuild / scalacOptions ++= Seq("-release", "8")
+ThisBuild / javacOptions ++= Seq(
+  "-g", // debug symbols
+  "--release", "8"
+)
+
 scmInfo := Some(ScmInfo(
     url("https://github.com/mpollmeier/sbt-ci-release-early-usage"),
     "scm:git@github.com:mpollmeier/sbt-ci-release-early-usage.git"))
