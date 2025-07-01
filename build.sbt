@@ -20,3 +20,4 @@ homepage := Some(url("https://github.com/mpollmeier/sbt-ci-release-early-usage/"
 
 
 publishTo := sonatypePublishToBundle.value
+sonatypeCredentialHost := "central.sonatype.com"
